@@ -1,0 +1,73 @@
+/* About.css */
+
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap');
+:root{
+  --font1:"Josefin Slab", serif;
+  --font2:"Antic Didone", serif;
+
+}
+.about-section {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Center the heading and add some spacing */
+.about-section h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #2c3e50;
+  text-transform: uppercase;
+  font-family: var(--font2);
+  margin-bottom: 2.3rem;
+  position: relative;
+}
+
+/* Style the subheading */
+.about-section h2 {
+  font-size: 2rem;
+  font-family: var(--font1);
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+}
+
+
+
+/* Justify the text and add spacing */
+.about-section p {
+  text-align: justify;
+  font-size: 1.2rem;
+  font-family: var(--font1);
+  line-height: 1.8;
+  color: black;
+  margin-bottom: 1.5rem;
+}
+
+/* Style the image */
+.about-section img {
+  border-radius: 10px;
+  box-shadow: rgba(43, 43, 43, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add hover effect to the image */
+.about-section img:hover {
+  transform: scale(1.01);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .about-section h1 {
+    font-size: 2.3rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.9rem;
+  }
+
+  .about-section p {
+    font-size: 0.95rem;
+  }
+}

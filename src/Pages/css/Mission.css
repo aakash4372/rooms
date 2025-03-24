@@ -1,0 +1,14 @@
+.our-mission .our-mission-p{
+    font-family: var(--font1);
+    font-size: 18px;
+}
+.our-mission .our-mission-p2{
+    font-family: var(--font1);
+    font-size: 18px;
+}
+.our-mission-title{
+    font-family: var(--font1);
+}
+.our-mission-bg{
+    background-color: rgba(223, 223, 247, 0.6);
+}
