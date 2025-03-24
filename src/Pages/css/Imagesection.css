@@ -1,0 +1,115 @@
+/* Main Container */
+.Image-compare {
+  background-color: #dbeafab7;
+  padding: 50px 0;
+}
+
+/* Image Compare Section */
+.Image-compare .react-compare-slider {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.Image-compare-label {
+  position: absolute;
+  bottom: 10px; /* Adjust as needed */
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+/* Apply border-radius to images */
+.image-wrapper img {
+  border-radius: 15px; /* Adjust as needed */
+  width: 100%;
+  border: 2px solid rgba(128, 128, 128, 0.363);
+  height: auto;
+}
+
+/* Apply border-radius to the compare slider container */
+.Image-compare .react-compare-slider {
+  border-radius: 15px; /* Match the image border-radius */
+  overflow: hidden;
+}
+
+
+.before {
+  left: 10px; /* Align text to bottom-left */
+}
+
+.after {
+  right: 10px; /* Align text to bottom-right */
+}
+
+/* Handle Button Styling */
+.Image-compare .react-compare-slider-handle {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 40px !important;
+  height: 40px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Right Side Content */
+.Image-compare .col-lg-6 h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.5 !important;
+  font-family: var(--font2);
+}
+
+.Image-compare .col-lg-6 p {
+  font-size: 1.21rem;
+  color: #3a3838;
+  font-family: var(--font1);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* Button Styling */
+.Image-compare .btn-dark {
+  background-color: #937152;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-family: var(--font1);
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.Image-compare .btn-dark:hover {
+  background-color: #937152;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .Image-compare .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+
+  .Image-compare .col-lg-6 h2 {
+    font-size: 1.6rem;
+    padding-top: 5%;
+  }
+
+  .Image-compare .btn-dark {
+    width: 100%;
+  }
+  .Image-compare .col-lg-6 p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+}

@@ -3,9 +3,10 @@ import Header from './Pages/Header'
 import MyCarousel from './Pages/Home'
 import AboutUs from './Pages/About'
 import Masterpieces from './Pages/Masterpieces'
-import Imagecompare from './Pages/Imagecompare'
 import Footer from './Pages/Footer'
 import OurMission from './Pages/Mission'
+import Imagesection from './Pages/Imagecompare'
+import BackToTop from './Pages/Backtotop'
 
 export default function App() {
   return (
@@ -14,8 +15,9 @@ export default function App() {
       <MyCarousel/>
       <AboutUs/>
       <OurMission/>
+      <BackToTop/>
       <Masterpieces/>
-      <Imagecompare/>
+      <Imagesection/>
       <Footer/>
     </div>
   )

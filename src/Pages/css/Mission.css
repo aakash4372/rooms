@@ -12,3 +12,6 @@
 .our-mission-bg{
     background-color: rgba(223, 223, 247, 0.6);
 }
+.number-count{
+    font-family: var(--font2);
+}
