@@ -13,21 +13,23 @@ export default function OurMission() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect(); // Stop observing once visible
-        }
-      },
-      { threshold: 0.3 }
-    );
+    if (typeof window !== "undefined") {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect(); // Stop observing once visible
+          }
+        },
+        { threshold: 0.3 }
+      );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+      if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+      }
+
+      return () => observer.disconnect();
     }
-
-    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -39,7 +41,7 @@ export default function OurMission() {
       awardsWon: 80,
     };
 
-    const interval = setInterval(() => {
+    let interval = setInterval(() => {
       setCounts((prevCounts) => {
         let updatedCounts = { ...prevCounts };
         let allReached = true;
@@ -52,10 +54,9 @@ export default function OurMission() {
         });
 
         if (allReached) clearInterval(interval);
-
         return updatedCounts;
       });
-    }, 20); // Faster count-up animation
+    }, 20);
 
     return () => clearInterval(interval);
   }, [isVisible]);
@@ -64,7 +65,7 @@ export default function OurMission() {
     <div className="our-mission-bg" id="mission">
       <section ref={sectionRef} className="our-mission container mx-auto p-6 pb-5">
         {/* Heading Animation */}
-        <motion.div 
+        <motion.div
           className="text-center mb-10"
           initial={{ opacity: 0, y: -50 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -76,23 +77,23 @@ export default function OurMission() {
           </p>
         </motion.div>
 
-        {/* Achievement Cards with Motion */}
+        {/* Achievement Cards */}
         <div className="grid md:grid-cols-3 gap-6">
           {[
             { title: "Happy Clients", key: "happyClients", suffix: "+" },
             { title: "Successful Projects", key: "successfulProjects", suffix: "" },
             { title: "Awards Won", key: "awardsWon", suffix: "+" },
-          ].map(({ title, key, suffix }) => (
+          ].map(({ title, key, suffix }, index) => (
             <motion.div
               key={key}
               className="bg-white shadow-lg p-6 rounded-lg text-center pb-5"
               initial={{ opacity: 0, y: 50 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 1, delay: 0.2 }}
+              transition={{ duration: 1, delay: index * 0.2 }}
             >
               <h3 className="text-xl font-semibold our-mission-title">{title}</h3>
               {/* Number Counter Animation */}
-              <motion.div 
+              <motion.div
                 className="text-3xl font-bold text-blue-700 mt-2 number-count"
                 initial={{ scale: 0.8 }}
                 animate={isVisible ? { scale: 1 } : {}}

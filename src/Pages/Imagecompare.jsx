@@ -20,19 +20,28 @@ const Imagesection = () => {
           <motion.div
             className="col-lg-6 position-relative image-compare"
             initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0 }}
             transition={{ duration: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <ReactCompareSlider
               itemOne={
                 <div className="image-wrapper">
-                  <ReactCompareSliderImage src="img/room1.jpg" alt="Before" />
+                  <ReactCompareSliderImage
+                    src="img/Before.jpg"
+                    alt="Before"
+                    loading="lazy"
+                  />
                   <div className="Image-compare-label before">Before</div>
                 </div>
               }
               itemTwo={
                 <div className="image-wrapper">
-                  <ReactCompareSliderImage src="img/room2.jpg" alt="After" />
+                  <ReactCompareSliderImage
+                    src="img/After.jpg"
+                    alt="After"
+                    loading="lazy"
+                  />
                   <div className="Image-compare-label after">After</div>
                 </div>
               }
@@ -52,8 +61,9 @@ const Imagesection = () => {
           <motion.div
             className="col-lg-6"
             initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <h2>Elevate Your Images with Professional Photo Editing</h2>
             <p>

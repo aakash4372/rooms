@@ -24,7 +24,7 @@ const Masterpieces = () => {
 
   // Ref for tracking visibility
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true }); // Trigger animation only once
+  const isInView = useInView(sectionRef, { once: false, amount: 0.2 }); // Ensure animation triggers properly
 
   return (
     <section ref={sectionRef} className="features-section text-center" style={{ background: "#f3f4f6" }}>
