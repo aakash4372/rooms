@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import {
   ReactCompareSlider,
   ReactCompareSliderImage,
@@ -8,12 +9,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/Imagesection.css";
 
 const Imagesection = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { triggerOnce: true, threshold: 0.2 });
+
   return (
-    <div className="Image-compare" id="works">
+    <div className="Image-compare" id="works" ref={sectionRef}>
       <div className="container mt-4 pb-5">
         <div className="row align-items-center">
           {/* Left Side - Image Comparison */}
-          <div className="col-lg-6 position-relative image-compare">
+          <motion.div
+            className="col-lg-6 position-relative image-compare"
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 1 }}
+          >
             <ReactCompareSlider
               itemOne={
                 <div className="image-wrapper">
@@ -37,26 +46,36 @@ const Imagesection = () => {
                 />
               }
             />
-          </div>
+          </motion.div>
 
           {/* Right Side - Content */}
-          <div className="col-lg-6 ">
-            <h2 className="">
-              Elevate Your Images with Professional Photo Editing
-            </h2>
+          <motion.div
+            className="col-lg-6"
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 1, delay: 0.3 }}
+          >
+            <h2>Elevate Your Images with Professional Photo Editing</h2>
             <p>
               Give your photos a professional touch with Rain Infotech’s expert
               editing services. From real estate to product photography, we
               enhance every detail to make your visuals more striking and
               appealing.
             </p>
-            <button
+            <motion.button
               className="btn btn-dark text-center mt-3 mb-4"
-              onClick={() => window.open("https://www.dropbox.com/scl/fo/oanroouicu3ufds42pme2/AO6eFtwP4Og2WKlYCuSTWx4?rlkey=ya091n4gd0gh2ifw5b8sjyt7p&st=88kaag1h&dl=0", "_blank")}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() =>
+                window.open(
+                  "https://www.dropbox.com/scl/fo/oanroouicu3ufds42pme2/AO6eFtwP4Og2WKlYCuSTWx4?rlkey=ya091n4gd0gh2ifw5b8sjyt7p&st=88kaag1h&dl=0",
+                  "_blank"
+                )
+              }
             >
               Explore More
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
       </div>
     </div>

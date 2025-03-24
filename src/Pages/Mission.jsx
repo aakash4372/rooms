@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
 import "./css/Mission.css";
 
 export default function OurMission() {
@@ -16,7 +17,7 @@ export default function OurMission() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect();
+          observer.disconnect(); // Stop observing once visible
         }
       },
       { threshold: 0.3 }
@@ -62,28 +63,43 @@ export default function OurMission() {
   return (
     <div className="our-mission-bg" id="mission">
       <section ref={sectionRef} className="our-mission container mx-auto p-6 pb-5">
-        {/* Heading */}
-        <div className="text-center mb-10">
-          <h2 className="main-about-title text-3xl font-bold text-gray-900">Our Achievements</h2>
+        {/* Heading Animation */}
+        <motion.div 
+          className="text-center mb-10"
+          initial={{ opacity: 0, y: -50 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1 }}
+        >
+          <h2 className="main-about-title text-3xl font-bold text-gray-900">Our Mission</h2>
           <p className="text-gray-600 mt-2 max-w-2xl mx-auto our-mission-p">
-            Design Info Solution Pvt. Ltd. is a trusted name among leading providers of premium services, including Photo Editing, Image Manipulation, and more. Known for our commitment to quality and precision, we deliver solutions that bring your visual content to life.
+            At Rainpic Infotech, we are dedicated to redefining real estate photography through high-quality, visually compelling imagery. By combining innovation, precision, and creativity, we enhance property visuals to maximize appeal and drive sales. Our mission is to empower realtors, photographers, and agencies with market-ready images that leave a lasting impression and elevate property listings.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Achievement Cards */}
+        {/* Achievement Cards with Motion */}
         <div className="grid md:grid-cols-3 gap-6">
           {[
             { title: "Happy Clients", key: "happyClients", suffix: "+" },
             { title: "Successful Projects", key: "successfulProjects", suffix: "" },
             { title: "Awards Won", key: "awardsWon", suffix: "+" },
           ].map(({ title, key, suffix }) => (
-            <div key={key} className="bg-white shadow-lg p-6 rounded-lg text-center pb-5">
+            <motion.div
+              key={key}
+              className="bg-white shadow-lg p-6 rounded-lg text-center pb-5"
+              initial={{ opacity: 0, y: 50 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
               <h3 className="text-xl font-semibold our-mission-title">{title}</h3>
-              {/* Number Counter */}
-              <div className="text-3xl font-bold text-blue-700 mt-2 number-count">
-                {counts[key]}
-                {suffix}
-              </div>
+              {/* Number Counter Animation */}
+              <motion.div 
+                className="text-3xl font-bold text-blue-700 mt-2 number-count"
+                initial={{ scale: 0.8 }}
+                animate={isVisible ? { scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
+                {counts[key]}{suffix}
+              </motion.div>
               <p className="text-gray-600 mt-3 our-mission-p2">
                 {title === "Happy Clients"
                   ? "We believe in harnessing the collective creativity and expertise of our team to exceed client expectations every time."
@@ -91,7 +107,7 @@ export default function OurMission() {
                   ? "We have delivered top-notch services across multiple industries, ensuring quality and precision in every project."
                   : "Our work has been recognized for excellence, earning us multiple awards in the industry."}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>

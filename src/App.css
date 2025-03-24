@@ -98,3 +98,29 @@ body {
   background: #29b6f6; /* Darker blue on hover */
 }
 
+
+.navbar-toggler {
+  border: none !important; /* Removes the border */
+  box-shadow: none !important; /* Removes any shadow */
+  outline: none !important; /* Removes outline */
+  background: transparent; /* Ensures no background */
+  padding: 5px; /* Adjust padding if needed */
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.navbar-toggler:hover {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.review-section p{
+  font-family: var(--font1);
+  font-size: 20px;
+  line-height: 1.5;
+}

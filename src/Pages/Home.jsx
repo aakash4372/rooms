@@ -10,21 +10,21 @@ const slides = [
     heading: "HDR Blend",
     text: "Perfect lighting & vibrant colors for a realistic feel.",
     buttonText: "Learn More",
-    buttonLink: "#services",
+    buttonLink: "https://www.dropbox.com/scl/fo/oanroouicu3ufds42pme2/AO6eFtwP4Og2WKlYCuSTWx4?rlkey=ya091n4gd0gh2ifw5b8sjyt7p&e=1&st=88kaag1h&dl=0",
   },
   {
     img: "img/room5.jpg",
     heading: "360 Images & Virtual Staging",
     text: "Immersive views that bring spaces to life.",
     buttonText: "Learn More",
-    buttonLink: "#contact",
+    buttonLink: "https://www.dropbox.com/scl/fo/oanroouicu3ufds42pme2/AO6eFtwP4Og2WKlYCuSTWx4?rlkey=ya091n4gd0gh2ifw5b8sjyt7p&e=1&st=88kaag1h&dl=0",
   },
   {
     img: "img/room6.jpg",
     heading: "Twilight & Day-to-Dusk Edits",
     text: "Create a warm, inviting ambiance effortlessly.",
     buttonText: "Learn More",
-    buttonLink: "#portfolio",
+    buttonLink: "https://www.dropbox.com/scl/fo/oanroouicu3ufds42pme2/AO6eFtwP4Og2WKlYCuSTWx4?rlkey=ya091n4gd0gh2ifw5b8sjyt7p&e=1&st=88kaag1h&dl=0",
   },
 ];
 
@@ -71,7 +71,7 @@ const MyCarousel = () => {
                   {/* Button */}
                   <a
                     href={slide.buttonLink}
-                    className="mt-2 no-underline slide-btn text-white text-lg sm:text-xl font-semibold py-2 px-6 rounded-lg shadow-md transition-all"
+                    className="mt-2 no-underline slide-btn text-white text-lg sm:text-xl font-semibold py-2 px-6 rounded-lg shadow-md transition-all" target="_blank" rel="noopener noreferrer"
                   >
                     {slide.buttonText}
                   </a>

@@ -35,7 +35,6 @@
 }
 
 /* Hover and Automatic Hover Effect */
-.feature-card:hover,
 .feature-card.hovered {
   background-color: #d3f67a31; /* Light greenish background */
   transform: translateY(-5px); /* Slight lift effect */
@@ -55,7 +54,6 @@
   transform: translateX(-50%);
 }
 
-.feature-card:hover::after,
 .feature-card.hovered::after {
   width: 100%;
 }
@@ -75,7 +73,6 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.feature-card:hover .icon,
 .feature-card.hovered .icon {
   transform: scale(1.1);
 }

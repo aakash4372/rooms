@@ -7,6 +7,7 @@ import Footer from './Pages/Footer'
 import OurMission from './Pages/Mission'
 import Imagesection from './Pages/Imagecompare'
 import BackToTop from './Pages/Backtotop'
+import ReviewSlider from './Pages/Review'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <OurMission/>
       <BackToTop/>
       <Masterpieces/>
+      <ReviewSlider/>
       <Imagesection/>
       <Footer/>
     </div>
