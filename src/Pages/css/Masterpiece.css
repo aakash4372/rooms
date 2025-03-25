@@ -22,23 +22,17 @@
   text-align: center;
   padding: 20px;
   position: relative;
-  border: 2px solid #ddd; /* Border */
-  border-radius: 10px; /* Rounded corners */
+  border: 2px solid #ddd;
+  border-radius: 10px;
   transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  height: 200px; /* Ensure uniform height */
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-/* Hover and Automatic Hover Effect */
-.feature-card.hovered {
-  background-color: #d3f67a31; /* Light greenish background */
-  transform: translateY(-5px); /* Slight lift effect */
-  box-shadow: 0 6px 12px rgba(52, 153, 242, 0.3);
+  overflow: hidden;
 }
 
 /* Underline Effect */
@@ -54,7 +48,23 @@
   transform: translateX(-50%);
 }
 
-.feature-card.hovered::after {
+/* Hover Effect */
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Effect for Odd Cards */
+.feature-card.odd:hover {
+  background-color: #d3f67a31; /* Light Green */
+}
+
+/* Hover Effect for Even Cards */
+.feature-card.even:hover {
+  background-color: #b8d5f367; /* Light Blue */
+}
+
+.feature-card:hover::after {
   width: 100%;
 }
 
@@ -70,20 +80,43 @@
 .icon {
   width: 50px;
   height: 50px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 }
 
-.feature-card.hovered .icon {
-  transform: scale(1.1);
+/* Smooth Icon Hover */
+.feature-card:hover .icon {
+  transform: scale(1.2) rotate(8deg);
+}
+
+/* Hide the title and text initially */
+.feature-text {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+/* Show the title and text only when hovering */
+.feature-card:hover .feature-text {
+  opacity: 1;
+  height: auto;
 }
 
 /* Feature Title */
 .feature-title {
-  margin-top: 10px;
   font-weight: 400;
   font-size: 1.2rem;
-  font-family: var(--font1);
+  font-family: var(--font3);
   color: #333;
+  margin-top: 10px;
+}
+
+/* Feature Text */
+.feature-text {
+  font-size: 0.95rem;
+  color: #666;
+  font-family: var(--font3);
+  margin-top: 8px;
 }
 
 /* Responsive Design */

@@ -8,6 +8,7 @@ import OurMission from './Pages/Mission'
 import Imagesection from './Pages/Imagecompare'
 import BackToTop from './Pages/Backtotop'
 import ReviewSlider from './Pages/Review'
+import ServicesCarousel from './Pages/services'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
       <MyCarousel/>
       <AboutUs/>
       <OurMission/>
+      <ServicesCarousel/>
       <BackToTop/>
       <Masterpieces/>
       <ReviewSlider/>

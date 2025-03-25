@@ -44,7 +44,7 @@ const ReviewSlider = () => {
             <Carousel.Item key={idx}>
               <div className="min-h-[150px] flex flex-col">
                 <FaQuoteLeft className="text-gray-400 text-2xl text-start" />
-                <p className="text-lg text-gray-600 flex items-center">
+                <p className="text-lg text-black flex items-center" style={{fontWeight: '500'}}>
                   {review}
                 </p>
               </div>

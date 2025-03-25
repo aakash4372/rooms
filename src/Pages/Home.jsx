@@ -6,21 +6,21 @@ import "./css/Home.css"; // Ensure this path is correct
 
 const slides = [
   {
-    img: "img/room4.png",
+    img: "img/hdr.jpg",
     heading: "HDR Blend",
     text: "Perfect lighting & vibrant colors for a realistic feel.",
     buttonText: "Learn More",
     buttonLink: "https://www.dropbox.com/scl/fo/oanroouicu3ufds42pme2/AO6eFtwP4Og2WKlYCuSTWx4?rlkey=ya091n4gd0gh2ifw5b8sjyt7p&e=1&st=88kaag1h&dl=0",
   },
   {
-    img: "img/room5.jpg",
+    img: "img/360.jpg",
     heading: "360 Images & Virtual Staging",
     text: "Immersive views that bring spaces to life.",
     buttonText: "Learn More",
     buttonLink: "https://www.dropbox.com/scl/fo/oanroouicu3ufds42pme2/AO6eFtwP4Og2WKlYCuSTWx4?rlkey=ya091n4gd0gh2ifw5b8sjyt7p&e=1&st=88kaag1h&dl=0",
   },
   {
-    img: "img/room6.jpg",
+    img: "img/daytodusk.jpg",
     heading: "Twilight & Day-to-Dusk Edits",
     text: "Create a warm, inviting ambiance effortlessly.",
     buttonText: "Learn More",
@@ -50,7 +50,8 @@ const MyCarousel = () => {
               alt={`Slide ${index + 1}`}
               className="w-full"
             />
-            <div className="absolute carousel-text inset-0 flex flex-col items-center justify-center text-center bg-black bg-opacity-50 px-6">
+<div className="absolute carousel-text inset-0 flex flex-col items-center justify-center text-center bg-black bg-opacity-50 px-6">
+
               {index === currentSlide && (
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}

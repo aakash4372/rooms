@@ -1,5 +1,5 @@
 import React from "react";
-import { FaQuoteLeft,FaQuoteRight } from "react-icons/fa";
+
 import "./css/About.css";
 
 
@@ -14,7 +14,7 @@ const AboutUs = () => {
         <div className="col-md-6 order-2 order-md-1">
           <h2>Rainpic Infotech</h2>
           <p>
-          <FaQuoteLeft className="text-warning" />
+ 
             At Rainpic Infotech, we turn ordinary real estate photos into
             extraordinary visuals that sell. With a perfect blend of creativity
             and cutting-edge editing techniques, we enhance property images to
@@ -26,7 +26,7 @@ const AboutUs = () => {
             precision.
             Whether you're a realtor, photographer, or agency, Rainpic Infotech
             is your trusted partner in making every property stand out. Let us
-            bring your listings to life with unmatched clarity and brilliance!<FaQuoteRight className="text-warning" />
+            bring your listings to life with unmatched clarity and brilliance!
           </p>
         </div>
 

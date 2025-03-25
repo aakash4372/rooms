@@ -1,5 +1,7 @@
 .our-mission .our-mission-p{
     font-family: var(--font1);
+    font-weight: 500;
+    color: black;
     font-size: 18px;
 }
 .our-mission .our-mission-p2{

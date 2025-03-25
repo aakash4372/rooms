@@ -1,0 +1,45 @@
+/* Spacing between images */
+.slider-img-container {
+    padding: 10px;
+}
+
+.slick-slide > div {
+    margin: 0 10px;
+}
+
+.slick-list {
+    margin: 0 -10px;
+}
+
+/* Image and title styling */
+.slider-item {
+    text-align: center;
+    padding: 10px;
+}
+
+.slider-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: none; /* Removes any border */
+    outline: none; /* Removes focus outline */
+    box-shadow: none !important; /* Ensures no shadow appears */
+}
+
+/* Title styling */
+.slider-title {
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: var(--font1);
+    color: #333;
+}
+
+/* Remove focus styles when clicking */
+.slick-slide:focus,
+.slick-slide div:focus,
+.slick-slide img:focus {
+    outline: none;
+    box-shadow: none;
+}

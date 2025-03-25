@@ -13,7 +13,7 @@ const Imagesection = () => {
   const isInView = useInView(sectionRef, { triggerOnce: true, threshold: 0.2 });
 
   return (
-    <div className="Image-compare" id="works" ref={sectionRef}>
+    <div className="Image-compare"  ref={sectionRef}>
       <div className="container mt-4 pb-5">
         <div className="row align-items-center">
           {/* Left Side - Image Comparison */}
