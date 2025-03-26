@@ -51,22 +51,17 @@ const ImageSlider = () => {
           <img src="img/flash.jpg" alt="Slide 3" className="slider-img" />
           <p className="slider-title">Flash Ambient</p>
         </div>
-
-        <div className="slider-item">
-          <img src="img/street.jpg" alt="Slide 4" className="slider-img" />
-          <p className="slider-title">Starlit Night</p>
-        </div>
         <div className="slider-item">
           <img src="img/house.jpg" alt="Slide 4" className="slider-img" />
-          <p className="slider-title">Starlit Night</p>
+          <p className="slider-title">Twilight</p>
         </div>
         <div className="slider-item">
           <img src="img/bedroom.jpg" alt="Slide 4" className="slider-img" />
-          <p className="slider-title">Starlit Night</p>
+          <p className="slider-title">HDR</p>
         </div>
         <div className="slider-item">
           <img src="img/kitchen.jpg" alt="Slide 4" className="slider-img" />
-          <p className="slider-title">Starlit Night</p>
+          <p className="slider-title">Real Estate</p>
         </div>
       </Slider>
     </Container>
