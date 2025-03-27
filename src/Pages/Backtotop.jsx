@@ -1,6 +1,6 @@
 import "./css/BackToTop.css";
 import React, { useState, useEffect } from "react";
-import { FaArrowUp, FaWhatsapp } from "react-icons/fa"; // Import icons
+import { FaArrowUp } from "react-icons/fa"; // Import icon
 
 const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,16 +26,6 @@ const BackToTop = () => {
 
   return (
     <>
-      {/* WhatsApp Floating Icon (Always Visible) */}
-      <a
-        href="https://wa.me/916381583810"
-        className="whatsapp-icon"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaWhatsapp className="icon-size" />
-      </a>
-  
       {/* Back to Top Button (Visible after scrolling 300px) */}
       <button
         className={`back-to-top ${isVisible ? "show" : ""}`}
@@ -45,7 +35,6 @@ const BackToTop = () => {
       </button>
     </>
   );
-  
 };
 
 export default BackToTop;
